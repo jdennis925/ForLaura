@@ -1,4 +1,13 @@
 import random
+import sys
+
+pythonVersion = sys.version_info
+
+def inputWrapper(message = ''):
+    if pythonVersion < (3,0):
+        return raw_input(message)
+    else:
+        return input(message)
 
 periodicTable = [
     'Hydrogen',
@@ -122,9 +131,9 @@ periodicTable = [
 ]
 
 print('Element Picker! (Laura Fox is the coolest!)')
-includeFBlock = input('include f-block? (y/n)')
+includeFBlock = inputWrapper('include f-block? (y/n)')
 print('hit ENTER for the next element!')
-input()
+inputWrapper()
 
 while(True):
 
@@ -134,4 +143,4 @@ while(True):
         inFblock = True
     if(not inFblock or includeFBlock == 'y'):
         print("[{0}] - {1}".format(atomicIndex + 1, periodicTable[atomicIndex]))
-        input()
+        inputWrapper()
