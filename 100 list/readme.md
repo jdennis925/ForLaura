@@ -1,0 +1,3 @@
+- Edit `max = 10` to whatever number you want
+- run `python code.py`
+- Get results... or wait forever
